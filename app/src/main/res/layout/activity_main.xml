@@ -50,7 +50,7 @@
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="center_vertical|center_horizontal"
         android:layout_gravity="top|center_horizontal"
-        android:onClick="RC_Forward" />
+         />
 
     <Button
         android:text="Reverse"
@@ -60,7 +60,7 @@
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="center_vertical|center_horizontal"
         android:layout_gravity="bottom|center_horizontal"
-        android:onClick="RC_Reverse" />
+        />
 
     <Button
         android:text="Left"
@@ -70,7 +70,7 @@
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="center_vertical|left"
         android:layout_gravity="center_vertical|right"
-        android:onClick="RC_Left" />
+        android:elevation="4dp" />
 
     <Button
         android:text="Right"
@@ -79,8 +79,7 @@
         android:id="@+id/RC_Right"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="center_vertical|right"
-        android:layout_gravity="center_vertical|left"
-        android:onClick="RC_Right" />
+        android:layout_gravity="center_vertical|left" />
 
     <Button
         android:text="Stop"
@@ -88,8 +87,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/RC_Stop"
         app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="bottom|left"
+        android:layout_gravity="top|right"
+         />
+
+    <Button
+        android:text="Speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RC_Speed"
+        app:layout_anchor="@+id/include"
         app:layout_anchorGravity="bottom|center_horizontal"
         android:layout_gravity="top|center_horizontal"
-        android:onClick="RC_Stop" />
+        android:onClick="RC_Speed" />
 
 </android.support.design.widget.CoordinatorLayout>
