@@ -17,7 +17,7 @@ import android.R.color;
 public class MainActivity extends AppCompatActivity {
 
     int angle=141;
-    String RC_Car_IP="10.0.0.6";
+    String RC_Car_IP="10.0.0.203";
 
 
     @Override
