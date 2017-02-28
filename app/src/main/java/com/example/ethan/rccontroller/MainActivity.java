@@ -17,6 +17,8 @@ import android.R.color;
 public class MainActivity extends AppCompatActivity {
 
     int angle=141;
+    String RC_Car_IP="10.0.0.6";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                @Override public void run() {
                    cmd = cmd+String.valueOf(angle);
                    mtv.setText(cmd);
-                   SocketClient myClient = new SocketClient("192.168.1.6", 21567, cmd, mtv);
+                   SocketClient myClient = new SocketClient(RC_Car_IP, 21567, cmd, mtv);
                    myClient.execute();
                    mHandler.postDelayed(this, 5);
                    angle +=2;
@@ -103,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override public void run() {
                     cmd = cmd+String.valueOf(angle);
                     mtv.setText(cmd);
-                    SocketClient myClient = new SocketClient("192.168.1.6", 21567, cmd, mtv);
+                    SocketClient myClient = new SocketClient(RC_Car_IP, 21567, cmd, mtv);
                     myClient.execute();
                     mHandler.postDelayed(this, 5);
                     angle -=2;
@@ -144,12 +146,12 @@ public class MainActivity extends AppCompatActivity {
                 switch(M.getAction()) {
                     case  MotionEvent.ACTION_DOWN:
                         tv.setText("Going Forward");
-                        SocketClient myClient = new SocketClient("192.168.1.6", 21567, "forward", tv);
+                        SocketClient myClient = new SocketClient(RC_Car_IP, 21567, "forward", tv);
                         myClient.execute();
                         break;
                     case MotionEvent.ACTION_UP:
                         tv.setText("Stopping");
-                        myClient = new SocketClient("192.168.1.6", 21567, "stop", tv);
+                        myClient = new SocketClient(RC_Car_IP, 21567, "stop", tv);
                         myClient.execute();
                         break;
                 }
@@ -170,12 +172,12 @@ public class MainActivity extends AppCompatActivity {
                 switch(M.getAction()) {
                     case  MotionEvent.ACTION_DOWN:
                         tv.setText("Going Backward");
-                        SocketClient myClient = new SocketClient("192.168.1.6", 21567, "backward", tv);
+                        SocketClient myClient = new SocketClient(RC_Car_IP, 21567, "backward", tv);
                         myClient.execute();
                         break;
                     case MotionEvent.ACTION_UP:
                         tv.setText("Stopping");
-                        myClient = new SocketClient("192.168.1.6", 21567, "stop", tv);
+                        myClient = new SocketClient(RC_Car_IP, 21567, "stop", tv);
                         myClient.execute();
                         break;
                 }
@@ -205,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText("Going Left");
 
-      SocketClient myClient = new SocketClient("192.168.1.6", 21567, "turn=200", tv);
+      SocketClient myClient = new SocketClient(RC_Car_IP, 21567, "turn=200", tv);
       myClient.execute();
     }
 
@@ -214,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText("Set Speed to 10");
 
-        SocketClient myClient = new SocketClient("192.168.1.6", 21567, "speed50", tv);
+        SocketClient myClient = new SocketClient(RC_Car_IP, 21567, "speed50", tv);
         myClient.execute();
     }
 
@@ -223,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText("Going Right");
 
-        SocketClient myClient = new SocketClient("192.168.1.6", 21567, "turn=15", tv);
+        SocketClient myClient = new SocketClient(RC_Car_IP, 21567, "turn=15", tv);
         myClient.execute();
     }
 
@@ -232,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText("Going Forward");
 
-        SocketClient myClient = new SocketClient("192.168.1.6", 21567, "forward", tv);
+        SocketClient myClient = new SocketClient(RC_Car_IP, 21567, "forward", tv);
         myClient.execute();
     }
 
@@ -241,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText("Backing Up");
 
-        SocketClient myClient = new SocketClient("192.168.1.6", 21567, "backward", tv);
+        SocketClient myClient = new SocketClient(RC_Car_IP, 21567, "backward", tv);
         myClient.execute();
     }
 
@@ -250,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText("Stopping!");
 
-        SocketClient myClient = new SocketClient("192.168.1.6", 21567, "stop", tv);
+        SocketClient myClient = new SocketClient(RC_Car_IP, 21567, "stop", tv);
         myClient.execute();
 
     }
